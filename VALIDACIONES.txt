@@ -1,0 +1,23 @@
+VALIDACIONES DEL PROYECTO
+- 24 filas obligatorias, seis números únicos entre 1 y 56 por fila.
+- Combinaciones repetidas rechazadas aunque el orden sea distinto.
+- Índice combinatorio único para cada conjunto.
+- Aciertos 0..6, score 0..100%, sustituciones 0..6, Hamming 0..12, normalizada H/12.
+- Pesos iniciales iguales a 1.
+- Monte Carlo grupal: 20,000 grupos de 24 combinaciones distintas.
+- Guardado de evaluación + 24 registros en Supabase con autenticación y RLS.
+- El panel estadístico usa score global por fecha como unidad temporal.
+
+- Shader WebGL: iluminación radial, halo, profundidad y pulso animado.
+- Rotación automática 360° y control manual de cámara.
+- Se preservan índices y coordenadas combinatorias; solo cambia la presentación visual.
+
+- Captura secuencial 1 por 1 con validación de duplicados y progreso hasta 24.
+- Fecha única para el sorteo; preview separado del almacenamiento en Supabase.
+- Predicciones en rojo, resultado real en amarillo y líneas de conexión con pulso animado.
+- Guardado explícito mediante botón independiente «Almacenar en la base de datos».
+
+- Sección 05 añadida: matriz de transición Markov de tres estados A/B/C y reproducción de eventos discretos DRAW.
+- CSV validado: 4,181 sorteos válidos ordenados por CONCURSO; 4,180 transiciones calculables.
+- Conteos de estados observados en CSV: A=430, B=3,368, C=383.
+- JavaScript completo comprobado con node --check.
