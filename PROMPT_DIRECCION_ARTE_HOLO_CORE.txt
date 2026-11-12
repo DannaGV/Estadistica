@@ -1,0 +1,70 @@
+PROMPT DE DIRECCIÓN DE ARTE — MELATE 6/56 / HOLO-CORE
+
+Actúa como Creative Director + Senior Product Designer especializado en interfaces holográficas, observatorios científicos, visualización de datos 3D y motion design web.
+
+REFERENCIAS VISUALES OBLIGATORIAS
+Usa las dos imágenes proporcionadas como guía estética:
+1) Una cámara de observatorio matemático inmersiva, oscura, con una nube central de partículas luminosas, geometría wireframe, paneles transparentes y ecuaciones técnicas.
+2) Un panel holográfico flotante con vidrio translúcido, bordes cian y violeta, módulos redondeados, anillo central luminoso y ambiente tecnológico cinematográfico.
+
+CONCEPTO
+“HOLO-CORE — MELATE COMBINATORIAL OBSERVATORY”.
+Debe sentirse como una interfaz científica holográfica de próxima generación, no como dashboard corporativo, ni como plantilla admin, ni como videojuego. La visualización matemática es el protagonista; los controles parecen paneles de cristal flotantes integrados en una cámara espacial.
+
+LENGUAJE VISUAL
+- Fondo azul noche casi negro (#030713), capas de profundidad azul índigo (#07162b) y violeta profundo (#21154b).
+- Vidrio oscuro translúcido con blur realista, reflejos suaves y bordes finos.
+- Cian eléctrico (#43eaff) para navegación, foco, líneas y estados activos.
+- Violeta holográfico (#a879ff) para acciones secundarias, selección y predicciones.
+- Jade luminoso (#45f5c4) reservado a cristales históricos.
+- Plata azulada (#8da7bd) para universo base.
+- Oro pálido (#ffe28a) para resultado observado.
+- Gradientes cian-violeta en botones principales y controles activos.
+- Evitar por completo los tonos crema, beige, naranja, coral dominante, verde fosforescente plano y estilo editorial minimalista.
+
+COMPOSICIÓN
+- Panel de control lateral como vidrio ahumado flotante, con esquinas amplias, líneas luminosas muy finas y profundidad.
+- La cámara combinatoria ocupa la mayor parte del viewport, con una atmósfera espacial oscura y una retícula apenas visible.
+- Cabecera de cámara en panel glass pequeño, flotante, no bloque pesado.
+- Leyenda como cápsula de vidrio.
+- Métricas como módulos translúcidos con reflejo y brillo sutil.
+- Inputs oscuros integrados, focus ring cian y labels legibles.
+- Botones principales tipo cápsula holográfica cian-violeta; secundarios en vidrio oscuro.
+- Evitar bordes sólidos excesivos, tarjetas planas, exceso de texto en mayúsculas y controles visualmente idénticos.
+
+VISUALIZACIÓN Y MOTION
+- Conservar los cristales históricos facetados de jade, semitransparentes, con halo radial moderado, destello interno y pulso lento.
+- Conservar el universo de puntos; usar gradientes de profundidad cian/plata.
+- Predicciones en violeta, resultado real en oro.
+- Añadir anillos orbitales de fondo y retícula espacial de muy baja opacidad.
+- Animaciones lentas de respiración, shimmer, parallax leve y reflejos que recorren bordes.
+- Nada de parpadeos rápidos, motion excesivo o efectos que dificulten leer datos.
+- Respetar prefers-reduced-motion.
+- No llamar 4D a un efecto de animación temporal; describirlo como motion design.
+
+RESPONSIVE
+- Desktop: panel lateral glass de 330–390px y observatorio amplio.
+- Tablet: panel más compacto y controles reordenados sin superponer la nube de puntos.
+- Móvil: cámara arriba, panel de controles debajo; controles táctiles, métricas en dos columnas, leyenda plegable o compacta y cero scroll horizontal.
+- Usar CSS Grid/Flex, clamp(), minmax(), svh/dvh y ResizeObserver o resize existente.
+- Evitar fuentes remotas y librerías externas.
+
+RESTRICCIONES TÉCNICAS
+- Hosting: Cloudflare Pages estático.
+- Mantener Canvas 2D; no WebGL, Three.js, shaders ni dependencias externas.
+- No alterar fórmulas combinatorias, ranking, coordenadas, Monte Carlo, Markov, parseo CSV, Auth, Supabase, RLS, IDs ni contratos de eventos.
+- No cargar el histórico automáticamente. Solo cargar CSV tras selección explícita.
+- No eliminar ni reemplazar la función de cristales históricos.
+- Optimizar el render para no degradar el rendimiento con 4,181 históricos y el universo de 32,468,436 combinaciones.
+
+CRITERIOS DE ACEPTACIÓN
+1. A primera vista se reconoce el lenguaje de las referencias: holograma, vidrio, cian-violeta, cámara científica.
+2. No quedan rastros de la paleta crema/grafito/terracota.
+3. Los cristales históricos siguen visibles y verdes jade.
+4. El observatorio ocupa el protagonismo visual.
+5. Diseño usable a 375px, 768px, 1366px y 1920px.
+6. CSV manual, cálculos, Markov y Supabase mantienen comportamiento.
+7. Comprobar sintaxis, ausencia de errores de consola, carga CSV y resize en navegador real antes de afirmar que está validado.
+
+ENTREGABLE
+Modificar el proyecto existente y entregar todos los archivos listos para Cloudflare Pages, sin maqueta desconectada ni cambios matemáticos.

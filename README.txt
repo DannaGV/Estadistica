@@ -11,7 +11,7 @@ PUBLICACIÓN
 8. Abre stats.html con la sesión iniciada para revisar el histórico.
 
 ARCHIVOS
-- index.html: visualizador WebGL2, captura 24 combinaciones, resultado observado, evaluación individual/grupal y almacenamiento.
+- index.html: visualizador Canvas 2D, captura 24 combinaciones, resultado observado, evaluación individual/grupal y almacenamiento.
 - stats.html: panel histórico independiente.
 - basedatos.csv: histórico local R1..R6 para colorear puntos.
 - supabase-config.js: configuración pública del cliente (Project URL y Publishable key).
@@ -25,7 +25,7 @@ SEGURIDAD
 La app exige cuenta autenticada. Las tablas tienen RLS y cada usuario solo puede consultar/insertar/borrar sus propios registros. En el navegador solo se expone la Publishable key. NUNCA pegues una service_role/secret key en supabase-config.js.
 
 LIMITACIONES DE VALIDACIÓN
-Se conserva el motor WebGL2 existente. El código local puede validarse sintácticamente, pero la persistencia solo se puede comprobar tras crear el proyecto Supabase, ejecutar el SQL y configurar URL/Publishable key. Cloudflare Pages Direct Upload acepta este sitio porque es estático y no incluye Wrangler ni Functions. El navegador debe tener WebGL2 habilitado.
+Se conserva el motor Canvas 2D existente. El código local puede validarse sintácticamente, pero la persistencia solo se puede comprobar tras crear el proyecto Supabase, ejecutar el SQL y configurar URL/Publishable key. Cloudflare Pages Direct Upload acepta este sitio porque es estático y no incluye Wrangler ni Functions. El navegador debe tener Canvas 2D habilitado.
 
 
 MEJORA VISUAL 3D — EDICIÓN 360
@@ -39,7 +39,7 @@ MEJORA VISUAL 3D — EDICIÓN 360
 - El renderizado usa sprites circulares con iluminación calculada en el shader, no geometría de esfera individual. Esto evita crear millones de mallas y mantiene viable el nivel de detalle.
 VALIDACIÓN ADICIONAL
 - JavaScript inline comprobado con node --check.
-- No se ha realizado prueba visual WebGL2 en el navegador/GPU del usuario; validar al desplegar.
+- No se ha realizado prueba visual Canvas 2D en el navegador/CPU/navegador del usuario; validar al desplegar.
 
 
 CAPTURA SECUENCIAL Y REGISTRO MANUAL
@@ -76,3 +76,40 @@ MEJORA VISUAL PROFESIONAL DE PROYECCIÓN
 - Las conexiones se dibujan por debajo de los puntos focales; los nodos rojos y amarillos permanecen visibles en sus extremos.
 - Se mantiene la geometría matemática del universo, los índices, las combinaciones, el modelo de almacenamiento y la lógica de evaluación.
 - La mejora usa líneas WebGL segmentadas y no crea mallas 3D adicionales por punto para evitar un coste excesivo.
+
+
+MEJORA DE PALETA Y PUNTOS DEL HISTÓRICO
+- Los puntos históricos verdes ahora usan una paleta esmeralda más intensa con brillo variable sutil por identificador.
+- Se incrementó moderadamente su tamaño para distinguirlos mejor del universo sin ocultar densidad.
+- El shader añade un borde interior luminoso y reflejo especular para reforzar el efecto de esfera.
+- El universo usa una transición azul profundo/cian/violeta para mejorar la separación por profundidad.
+- Los colores rojo (predicción) y amarillo (resultado observado) se mantienen diferenciados.
+
+
+CRISTALES FANTASMA v2 (referencia: TensorFlow Embedding Projector)
+- Cuatro colores fijos: AZUL = pendientes, VERDE = históricos, ROJO = 24 predicciones, DORADO = combinación real. Los rayos neuronales (rojo/cian) siguen uniendo cada predicción con la real.
+- Históricos, predicciones y real se dibujan como poliedros finos translúcidos (icosaedro instanciado): cara fresnel, arista delgada, núcleo luminoso y cáscara wireframe contrarrotante. Predicciones x2.2 y real x3.2 más grandes.
+- Pistas de profundidad del Embedding Projector: niebla (lo lejano se atenúa) y tamaño por distancia. Etiquetas flotantes P01..P24 y REAL sobre los puntos resaltados.
+- Los puntos pendientes se atenúan y se desaturan menos hacia el blanco para conservar el azul.
+- Botón «Cristales» apaga/enciende solo los históricos. Sin cambios en coordenadas, Supabase ni evaluación.
+- Validación: node --check OK; no probado en CPU/navegador real.
+
+
+ACTUALIZACION FINAL: corregido el orden de inicializacion del buffer histInst que provocaba "Cannot access histInst before initialization" al actualizar el CSV. Se redujo ligeramente el tamano y brillo de los cristales historicos para una apariencia menos exagerada.
+
+
+MOTOR GRAFICO: Canvas 2D por software. No requiere WebGL, WebGL2, shaders ni aceleracion por hardware. El universo base se representa mediante muestreo determinista adaptativo; todos los registros historicos CSV y puntos de prediccion/resultado se dibujan de forma exacta.
+
+
+ACTUALIZACIÓN DE ESTA VERSIÓN
+- Motor gráfico: Canvas 2D; no utiliza WebGL2 ni shaders.
+- El histórico NO se descarga automáticamente al iniciar.
+- Selecciona manualmente basedatos.csv desde el control de carga para activar histórico y Markov.
+
+
+REDISENO VISUAL ATELIER 56
+La interfaz incorpora una nueva dirección de arte editorial científica con paleta porcelana/grafito, acentos vermilion/chartreuse y cámara carbón. Incluye PROMPT_DISENO_MELATE.txt como especificación de diseño.
+
+
+DIRECCION DE ARTE HOLO-CORE
+Nueva interfaz holografica basada en las referencias visuales: glassmorphism oscuro, cian/violeta, anillos orbitales y camara cientifica. Ver PROMPT_DIRECCION_ARTE_HOLO_CORE.txt.

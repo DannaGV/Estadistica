@@ -1,0 +1,31 @@
+MELATE 6/56 — RECONSTRUCCIÓN VISUAL DESDE CERO
+
+DIRECCIÓN DE DISEÑO
+- Interfaz "Combinatorial Space / Operations Console".
+- Se eliminó la composición anterior de dashboard lateral largo y el gráfico decorativo superpuesto.
+- El Canvas 2D original ahora ocupa toda la escena principal. La nube de puntos y su proyección matemática son la visualización real e interactiva del universo combinatorio; no se insertó una imagen estática.
+- Consola derecha de vidrio oscuro con módulos por pestañas: Predicción, Resultado, Datos y modelos.
+- Telemetría compacta separada de la consola.
+- Paleta: negro espacial, azul noche, cian eléctrico, índigo, violeta, magenta, jade y oro.
+- En móvil, la escena se muestra primero y la consola pasa debajo con navegación por pestañas.
+
+FUNCIONALIDAD PRESERVADA
+- Se conservaron todos los IDs del HTML original.
+- El JavaScript principal inline es idéntico al original.
+- Se conservaron los módulos de captura de 24 combinaciones, generación, evaluación, Monte Carlo, CSV, Markov, eventos discretos y visualización Canvas.
+- supabase-config.js y supabase_schema.sql no fueron modificados.
+- Se añadió únicamente un pequeño controlador de pestañas para cambiar la vista de los módulos de interfaz.
+
+VALIDACIONES
+- node --check del JavaScript principal: OK.
+- Comparación de JavaScript original contra rediseño: idéntico.
+- Comparación de IDs: todos los IDs originales están presentes.
+- Supabase config y SQL: idénticos a los originales.
+- Navegador headless con stub local de Supabase para aislar la UI: sin errores de ejecución.
+- Viewports probados: 1303×574, 1440×900, 768×900, 390×844 y 1920×1080.
+- Desbordamiento horizontal: 0 px en todos los viewports.
+- Cambio de pestañas probado.
+- No se validó una conexión remota real con Supabase ni se simuló una carga real del CSV en esta prueba aislada.
+
+NOTA
+El motor de visualización original utiliza Canvas 2D y proyección matemática 3D por software. Se conservó tal cual, sin introducir WebGL ni cambiar las coordenadas, índices o algoritmos.

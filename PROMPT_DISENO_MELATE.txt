@@ -1,0 +1,75 @@
+PROMPT MAESTRO DE REDISEÑO — MELATE 6/56 / ATELIER 56
+
+Actúa como Director/a de Diseño Digital Senior, Product Designer especializado/a en observatorios científicos, visualización matemática 3D, interfaces de datos y motion design web.
+
+OBJETIVO
+Rediseñar integralmente la interfaz existente de MELATE 6/56 para convertirla en un observatorio combinatorio profesional, futurista y de calidad de producto. No hagas un simple cambio de colores ni una plantilla SaaS genérica. Cambia la composición, jerarquía, ritmo, tipografía, superficies, controles y lenguaje visual manteniendo intactos los cálculos y el comportamiento funcional.
+
+DIRECCIÓN DE ARTE
+Concepto: “ATELIER 56 — Scientific Instrument / Computational Observatory”.
+Mezcla una interfaz editorial suiza de laboratorio con una cámara de visualización científica cinematográfica. Debe sentirse como un instrumento de investigación contemporáneo: preciso, sobrio, premium y tecnológico; no como un videojuego, casino, cyberpunk ni panel gamer.
+
+PALETA NUEVA
+- Fondo de aplicación / panel: porcelana cálida #F5F3EC y piedra #E9E7DF.
+- Texto principal: grafito #202322.
+- Texto secundario: gris mineral #686B6B.
+- Cámara 3D: carbón profundo #0D1113 con atmósfera grafito #273139.
+- Acento de acción: vermilion #D9573F.
+- Acento de selección: chartreuse suave #D7EF65.
+- Histórico: cristal jade translúcido #31D6A0.
+- Universo: plata mineral #9BA7AD.
+- Predicción: coral #D9573F.
+- Resultado observado: oro pálido #F4D36B.
+Usa color como codificación semántica estable, nunca como decoración aleatoria.
+
+COMPOSICIÓN
+- Escritorio: panel de control lateral de ancho legible y cámara combinatoria dominante ocupando el resto del viewport.
+- La cabecera del observatorio debe ser compacta, con nombre, estado del motor, cantidad de registros cargados y controles principales.
+- Métricas en bloques editoriales compactos, con números grandes, etiquetas pequeñas y alineación consistente.
+- Agrupa formularios en secciones con títulos numerados, descripciones breves y separación generosa.
+- La carga CSV debe ser una acción primaria clara con estado: “Sin histórico”, “Validando archivo”, “4,181 registros cargados” o error accionable.
+- La leyenda de la cámara debe ser pequeña, legible y no tapar los puntos.
+- Los controles secundarios deben tener jerarquía menor y no competir con la visualización.
+- Eliminar apariencia de cajas anidadas sin propósito, bordes excesivos, texto diminuto y saturación de badges.
+
+TIPOGRAFÍA
+- Usar una sans contemporánea de sistema con jerarquía tipográfica fluida mediante clamp().
+- Números y métricas con cifras tabulares.
+- Etiquetas técnicas con espaciado moderado, nunca todo en mayúsculas en bloques largos.
+- No depender de Google Fonts ni CDNs para que el diseño funcione en redes institucionales.
+
+VISUALIZACIÓN 3D / 2D FALLBACK
+- Mantener Canvas 2D como motor compatible con Cloudflare Pages y navegadores con WebGL restringido.
+- Conservar los cristales históricos facetados y translúcidos en jade; deben ser reconocibles, refinados y de tamaño moderado.
+- Universo en plata mineral, predicciones coral, observado oro pálido.
+- Añadir profundidad visual con capas, grid espacial sutil, halos suaves, parallax limitado y animación de respiración lenta.
+- No simular “4D” si no existe una cuarta dimensión matemática real; describirlo como animación temporal / motion design.
+- No usar librerías externas, WebGL, Three.js, shaders, ni fuentes remotas.
+- Respetar prefers-reduced-motion y evitar animaciones que comprometan rendimiento.
+
+RESPONSIVE
+- Desktop: split view con sidebar de controles y escena dominante.
+- Tablet: panel de controles más estrecho, controles de cámara reordenados.
+- Mobile: escena primero, panel de controles debajo; botones apilados o en grid, métricas en dos columnas, inputs táctiles grandes, sin scroll horizontal.
+- Usar CSS Grid/Flex, minmax(), clamp(), svh/dvh y breakpoints reales.
+- El canvas debe recalcular su tamaño al cambiar orientación o tamaño de pantalla.
+
+RESTRICCIONES CRÍTICAS
+- No modificar rankCombination, unrankCombination, rankCoords, fórmulas, distribución hipergeométrica, Monte Carlo, Markov, validación CSV, persistencia Supabase, RLS, IDs de controles ni contratos de datos.
+- No cambiar la semántica de los colores de puntos.
+- No cargar automáticamente el CSV: solo cuando el usuario seleccione el archivo.
+- No añadir frameworks ni dependencias.
+- No ocultar errores funcionales: mostrar mensajes breves, claros y accionables.
+- Preservar el funcionamiento en hosting estático de Cloudflare Pages.
+
+CRITERIOS DE ACEPTACIÓN
+1. El resultado debe verse claramente diferente de la interfaz anterior a primera vista.
+2. El panel de control debe ser legible y usable, no una lista comprimida de controles.
+3. La cámara 3D debe ser el foco visual y conservar los cristales históricos.
+4. En 375 px de ancho no debe existir desbordamiento horizontal.
+5. El diseño debe seguir funcionando sin acceso a fuentes o librerías externas.
+6. Los cálculos y datos deben permanecer idénticos.
+7. Probar sintaxis JavaScript, carga manual de CSV, render de Canvas, resize responsive y consola del navegador antes de declarar el trabajo terminado.
+
+ENTREGABLE
+Modificar los archivos existentes, no crear una maqueta desconectada. Entregar ZIP completo listo para Cloudflare Pages, más lista de cambios y pruebas realmente ejecutadas.

@@ -1,0 +1,40 @@
+MELATE 6/56 — HOLO-CORE
+Rediseño de interfaz aplicado sobre el proyecto original.
+
+CAMBIOS VISUALES
+- Escena Canvas 2D a pantalla completa como protagonista del observatorio.
+- Consola lateral flotante con vidrio oscuro translúcido, blur, reflejos y bordes cian/violeta.
+- Paleta HOLO-CORE: negro espacial, azul profundo, cian, violeta, jade histórico y oro observado.
+- Métricas, inputs, botones, leyenda, HUD, información de puntos y estados con nuevo lenguaje visual.
+- Diseño responsive: consola superpuesta en escritorio; escena primero y controles debajo en móvil.
+- Panel de análisis estadístico con el mismo lenguaje holográfico.
+- Respeto a prefers-reduced-motion.
+
+FUNCIONALIDAD PRESERVADA
+- No se modificó el JavaScript inline de index.html ni stats.html.
+- Se conservaron los 62 identificadores HTML de index.html.
+- Se conservó supabase-config.js y el esquema SQL.
+- Se conservan Canvas 2D, universo e índices combinatorios, CSV manual, generación/evaluación de 24 combinaciones, Monte Carlo, Markov, eventos discretos y persistencia Supabase.
+
+VALIDACIONES EJECUTADAS
+- node --check: script inline de index.html — OK.
+- node --check: script inline de stats.html — OK.
+- Comparación de scripts inline contra el ZIP original — idénticos.
+- Comparación de IDs de index.html contra el original — idénticos.
+- Configuración Supabase comparada — idéntica.
+
+PENDIENTE DE VALIDAR EN EL ENTORNO DEL USUARIO
+- Render visual en navegador real y tamaños 375, 768, 1366 y 1920 px.
+- Carga manual del CSV y persistencia real con credenciales Supabase configuradas.
+- La configuración Supabase incluida conserva los placeholders originales; sustituirlos por la URL y publishable key del proyecto antes de iniciar sesión.
+
+CORRECCIÓN POSTERIOR — VISTA EN BLANCO / RESPONSIVE
+- Causa identificada: reglas antiguas con !important estaban anulando la nueva estructura CSS. #view permanecía en el flujo normal después de todo el contenido del panel lateral; con overflow:hidden, el canvas quedaba fuera del viewport.
+- Se corrigió la jerarquía estructural con overrides específicos para escritorio, tablet y móvil.
+- Se añadió una capa SVG de partículas, conexiones geométricas, órbitas y un retículo holográfico decorativo; la visualización Canvas 2D original permanece activa e interactiva debajo.
+- Se reforzó el contraste de controles y se retiró el acento naranja heredado.
+- Prueba de navegador headless con stub local de Supabase para aislar la interfaz: sin errores JavaScript de página.
+- Viewport comprobados: 375×812, 768×900, 1366×768 y 1920×1080.
+- Desbordamiento horizontal comprobado: 0 px en los cuatro tamaños.
+- Canvas ajusta sus dimensiones al viewport en los cuatro tamaños.
+- No se validó conexión remota real de Supabase ni carga del CSV en esta prueba aislada.
