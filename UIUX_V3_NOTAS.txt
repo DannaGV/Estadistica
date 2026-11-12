@@ -1,0 +1,32 @@
+MELATE 6/56 — UI/UX VISUAL PASS 03
+
+DIRECCIÓN VISUAL
+- Se conserva la composición aprobada: escena principal a la izquierda y consola flotante a la derecha; en móvil, escena primero y consola debajo.
+- Nueva paleta: obsidiana, océano profundo, teal mineral, azul hielo, índigo, jade y oro.
+- Fondo computacional con iluminación volumétrica por gradientes, campo de estrellas determinista, rejilla de perspectiva 3D, jaula geométrica y tres órbitas elípticas.
+- La jaula, rejilla y órbitas se proyectan usando la misma matriz de cámara del visualizador.
+- Partículas del universo con tonos por profundidad, tamaños variables, halos y puntos de luz.
+- Históricas en jade, predicciones en violeta hielo y resultado observado en oro.
+- Consola refinada: estados activos, superficies de vidrio oscuro, jerarquía tipográfica, estados hover/focus y controles más consistentes.
+
+INTERACTIVIDAD
+- Se conservan giro 360°, centrar cámara, cristales, ayuda de controles, zoom, arrastre, selección de puntos y navegación por pestañas.
+- No se añadieron imágenes estáticas como sustituto de la visualización matemática.
+- La escena usa Canvas 2D y proyección 3D por software, manteniendo los índices y coordenadas combinatorias originales.
+
+INTEGRIDAD FUNCIONAL
+- Sin cambios en choose, rankCombination, unrankCombination, rankCoords, parseCSV, rebuildHistory, buildMarkov ni runDiscreteEvents.
+- Supabase config y esquema SQL permanecen idénticos.
+- Todos los IDs HTML originales permanecen presentes.
+- Se conserva el motor de captura y validación de 24 combinaciones, evaluación, Monte Carlo, histórico CSV, Markov y eventos discretos.
+
+VALIDACIONES
+- Node syntax check del script principal: OK.
+- Browser headless con Supabase simulado para aislar UI: sin errores JavaScript.
+- Viewports probados: 1303×574, 1440×900, 768×900, 390×844, 1920×1080.
+- Desbordamiento horizontal: 0 px en todos los viewports.
+- Canvas adaptó su resolución a la ventana en todas las pruebas.
+- Pestañas Predicción/Resultado/Datos probadas.
+- Controles de giro, cristales y centrar cámara probados.
+- Arrastre y zoom probados.
+- No se probó una conexión remota real de Supabase ni la carga de un CSV de producción en esta prueba aislada.

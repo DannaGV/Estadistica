@@ -1,0 +1,24 @@
+MELATE 6/56 — V4 COLOR & PREDICTION VISUALIZATION
+
+VISUAL CORRECTION
+- The 24 predicted combinations are now consistently rendered in saturated fuchsia / neon magenta with a violet secondary ring, layered glow, white-pink core, pulse, and P01–P24 labels.
+- The observed real combination is rendered in a distinct gold color with a larger nucleus, three concentric rings, radial rays, warm halo, and REAL label.
+- Each prediction connects visually to the observed result through a magenta-to-gold ray with a subtle moving glint.
+- Historical combinations retain jade/green crystal styling.
+- Universe particles are now neutral mineral silver / sage rather than blue/cyan.
+- Background palette changed to graphite black, plum and muted amethyst. The prior blue-led background and blue-heavy console styling have been removed.
+- Existing layout is retained: visualization left, floating control console right; mobile keeps the scene above the console.
+
+FUNCTIONAL INTEGRITY
+- Mathematical and data functions choose, rankCombination, unrankCombination, rankCoords, parseCSV, rebuildHistory, buildMarkov, and runDiscreteEvents are unchanged from V3.
+- Supabase config and SQL schema are byte-identical to V3.
+- Only draw/render styling and CSS visual palette were changed.
+- Original controls, camera, zoom, rotation, point selection, 24-combination workflow, CSV, evaluation, Markov and discrete-event UI retained.
+
+TESTS
+- Node syntax check: passed.
+- Browser UI tested with synthetic preview points only (24 temporary predictions + one temporary observed point); no synthetic data is written into the project.
+- Viewports: 1303×574, 1440×900, 390×844.
+- Horizontal overflow: 0 px in all tested viewports.
+- No browser runtime errors in isolated UI test.
+- Real Supabase connection and production CSV were not tested in this isolated visual pass.
